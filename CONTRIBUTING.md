@@ -1,3 +1,3 @@
 # Want another one added?
 
-Create a PR adding the dependency to [Cargo.toml](Cargo.toml)
+Create a PR adding the dependency to [Cargo.toml](Cargo.toml) and to [Dockerfile](Dockerfile).
