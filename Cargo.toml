@@ -5,7 +5,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dev-dependencies]
-mdbook = "0.4.25"
+mdbook = "0.4.26"
 mdbook-toc = "0.11.0"
 mdbook-mermaid = "0.12.6"
 mdbook-admonish = "1.8.0"
