@@ -1,9 +1,9 @@
-name: Docker
+name: Docker publish
 
 on:
   push:
-    branches: [ "main" ]
-    tags: [ "v*.*.*" ]
+    branches:
+      - main
 
 env:
   REGISTRY: ${{ github.repository_owner }}
@@ -45,6 +45,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          platforms: linux/arm64,linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
