@@ -1414,9 +1414,9 @@ dependencies = [
 
 [[package]]
 name = "mdbook-pdf"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cfdb011790f503bd785e8fef98b3f374567a81a9465b262868e32542c9f84669"
+checksum = "6ca8e030f987a39692e1325e4739e3cd43a1be1384e5e46f66aef22e23227499"
 dependencies = [
  "env_logger 0.10.0",
  "lazy_static",
