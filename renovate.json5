@@ -10,8 +10,9 @@
       "description": "Update cargo install versions in Dockerfile",
       "fileMatch": ["^Dockerfile$"],
       "matchStrings": [
-        "cargo install (?<depName>\\S+).*--version \"(?<currentValue>.*)\""
+        "cargo install (?<depName>\\S+).*--version (?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
+      "depNameTemplate": "{{{replace 'github.com' 'ghc' depName}}}",
       "datasourceTemplate": "crate"
     }
   ]
