@@ -12,7 +12,6 @@
       "matchStrings": [
         "cargo install (?<depName>\\S+).*--version (?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "depNameTemplate": "{{{replace 'github.com' 'ghc' depName}}}",
       "datasourceTemplate": "crate"
     }
   ]
