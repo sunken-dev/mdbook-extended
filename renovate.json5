@@ -12,8 +12,7 @@
       "matchStrings": [
         "cargo install (?<depname>\\S+).*--version \"(?<currentValue>.*)\""
       ],
-      "depNameTemplate": "yarn",
-      "datasourceTemplate": "cargo"
+      "datasourceTemplate": "crate"
     }
   ]
 }
