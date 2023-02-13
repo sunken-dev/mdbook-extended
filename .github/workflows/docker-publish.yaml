@@ -6,7 +6,8 @@ on:
       - main
 
 env:
-  REGISTRY: ${{ github.repository_owner }}
+  REGISTRY: docker.io
+  IMAGE_OWNER: ${{ github.repository_owner }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
@@ -35,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_OWNER }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
         id: build-and-push
