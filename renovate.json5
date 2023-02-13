@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "schedule:weekly",
+//    "schedule:weekly",
   ],
   "ignorePresets": [
     ":prHourlyLimit2"
@@ -14,9 +14,15 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "cargo install --locked (?<depName>\\S+)\\@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "cargo install.*?(?<depName>\\S+)\\@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "crate"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major","minor", "patch", "pin", "digest"],
+      "automerge": true
     }
   ]
 }
