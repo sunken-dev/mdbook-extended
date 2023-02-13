@@ -14,7 +14,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "cargo install (?<depName>\\S+?).*--version (?<currentValue>\\d+\\.\\d+\\.\\d+?)"
+        "cargo install (?<depName>\\S+).*--version (?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "crate"
     }

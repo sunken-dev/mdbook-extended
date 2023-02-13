@@ -1,9 +1,9 @@
 name: Docker publish
 
-on:
-  push:
-    branches:
-      - main
+#on:
+#  push:
+#    branches:
+#      - main
 
 env:
   REGISTRY: docker.io
