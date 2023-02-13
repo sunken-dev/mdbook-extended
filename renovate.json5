@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+//    "schedule:monthly",
+  ],
+  schedule: [
+    "every 10 minutes"
+  ],
+  "ignorePresets": [":prHourlyLimit2"],
+  "regexManagers": [
+    {
+      "description": "Update cargo install versions in Dockerfile",
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "cargo install (?<depname>\\S+).*--version \"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "yarn",
+      "datasourceTemplate": "cargo"
+    }
+  ]
+}
