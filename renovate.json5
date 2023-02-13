@@ -4,9 +4,6 @@
     "config:base",
 //    "schedule:monthly",
   ],
-  schedule: [
-    "every 10 minutes"
-  ],
   "ignorePresets": [":prHourlyLimit2"],
   "regexManagers": [
     {
