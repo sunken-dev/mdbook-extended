@@ -6,7 +6,7 @@ RUN export ARCH=$(case $TARGETARCH in "arm64") echo "aarch64";; *) echo "x86_64"
     export RUSTFLAGS="-C linker=$ARCH-linux-gnu-gcc" && \
     export CARGO_BUILD_TARGET=$ARCH-unknown-linux-gnu && \
     rustup target add $CARGO_BUILD_TARGET && \
-    cargo install --locked mdbook-toc@0.9.0 && \
+    cargo install --locked mdbook-toc@0.11.0 && \
     cargo install --locked mdbook-mermaid@0.12.6 && \
     cargo install --locked mdbook-admonish@1.8.0  && \
     cargo install --locked mdbook-linkcheck@0.7.7  && \
