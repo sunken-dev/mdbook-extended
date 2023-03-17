@@ -25,13 +25,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### Base image which contains mdbook with all extensions
 ```shell
-docker buildx build -t ch4s3r/mdbook-extended .
+docker buildx build -t sunken-dev/mdbook-extended .
 ```
 
 ### Example dockerfile with nginx
 
 ```Dockerfile
-FROM ch4s3r/mdbook-extended AS builder
+FROM sunken-dev/mdbook-extended AS builder
 WORKDIR /app
 COPY . .
 RUN ["mdbook", "build"]
