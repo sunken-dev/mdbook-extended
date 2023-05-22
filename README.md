@@ -8,7 +8,6 @@ Automatically updated [mdbook](https://github.com/rust-lang/mdBook) docker image
 - mdbook-mermaid
 - mdbook-admonish
 - mdbook-linkcheck
-- mdbook-pdf
 
 ## Why?
 
