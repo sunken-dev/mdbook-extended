@@ -3,7 +3,7 @@ FROM --platform=$BUILDPLATFORM rust:1.69-slim AS builder
 WORKDIR /app
 ARG TARGETARCH
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
-COPY docker .
+COPY ./cargo_install.sh ./platform_variables.sh ./
 RUN ./platform_variables.sh
 RUN apt-get update && apt-get install -y build-essential $(cat .compiler)
 RUN rustup target add $(cat .platform)
