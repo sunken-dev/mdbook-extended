@@ -12,7 +12,7 @@ Automatically updated [mdbook](https://github.com/rust-lang/mdBook) docker image
 
 ## Additional preprocessors
 
-Currently, we automatically download the files needed `mermaid` and `admonish` at build time of this base image and then in the [mdbook_build_wrapper.sh](mdbook_build_wrapper.sh) we change the actual `book.toml` to load these files, to avoid downloading them on every build but only when the base image gets updated. 
+Currently, we automatically download the files needed `mermaid` and `admonish` at build time of this base image and then in the [mdbook_build_wrapper.sh](docker/mdbook_build_wrapper.sh) we change the actual `book.toml` to load these files, to avoid downloading them on every build but only when the base image gets updated. 
 
 ## Why?
 
