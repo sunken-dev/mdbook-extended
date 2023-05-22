@@ -30,12 +30,11 @@ docker buildx build -t sunken-dev/mdbook-extended .
 ### Example dockerfile with nginx
 
 ```Dockerfile
-FROM sunken-dev/mdbook-extended AS builder
-WORKDIR /app
+FROM ghcr.io/sunken-dev/mdbook-extended AS builder
 COPY . .
 RUN ["mdbook", "build"]
 
-FROM nginx:alpine AS webserver
+FROM nginx:alpine-slim AS webserver
 COPY --from=builder /app/book/html /usr/share/nginx/html
 EXPOSE 80
 ```
