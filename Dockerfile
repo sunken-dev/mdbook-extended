@@ -4,7 +4,7 @@ WORKDIR /app
 ARG TARGETARCH
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 COPY docker .
-RUN sh platform.sh
+RUN sh platform_variables.sh
 RUN apt-get update && apt-get install -y build-essential $(cat .compiler)
 RUN rustup target add $(cat .platform)
 
