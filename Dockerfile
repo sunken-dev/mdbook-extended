@@ -23,9 +23,6 @@ RUN ./cargo_install.sh mdbook-linkcheck@0.7.7
 FROM builder AS mdbook
 RUN ./cargo_install.sh mdbook@0.4.25
 
-FROM builder AS toml-cli
-RUN ./cargo_install.sh toml-cli@0.2.3
-
 FROM debian:stable-slim
 WORKDIR /app
 COPY --from=mdbook-toc       --link /usr/local/cargo/bin/* /usr/bin/
