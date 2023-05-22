@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.4
 FROM --platform=$BUILDPLATFORM rust:1.69-slim AS builder
-# Shell is needed for the substitution of the TARGETARCH
+# Bash is needed for the substitution of TARGETARCH
 SHELL ["/bin/bash", "-c"]
 WORKDIR /app
 ARG TARGETARCH
