@@ -33,11 +33,5 @@ COPY --from=mdbook-mermaid   --link /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-admonish  --link /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-linkcheck --link /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook           --link /usr/local/cargo/bin/mdbook* /usr/bin/
-COPY --from=toml-cli         --link /usr/local/cargo/bin/toml*   /usr/bin/
-RUN mdbook init --title none --ignore none
-RUN mdbook-mermaid install
-RUN mdbook-admonish install
-RUN toml get book.toml preprocessor.admonish.assets_version > .admonish_assets_version
-COPY ./docker/mdbook_build_wrapper.sh .
 ENTRYPOINT ["mdbook"]
 CMD ["--help"]

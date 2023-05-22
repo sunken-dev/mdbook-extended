@@ -10,9 +10,6 @@ Automatically updated [mdbook](https://github.com/rust-lang/mdBook) docker image
 - mdbook-linkcheck
 - mdbook-pdf
 
-## Additional preprocessors
-
-Currently, we automatically download the files needed `mermaid` and `admonish` at build time of this base image and then in the [mdbook_build_wrapper.sh](mdbook_build_wrapper.sh) we change the actual `book.toml` to load these files, to avoid downloading them on every build but only when the base image gets updated. 
 
 ## Why?
 
@@ -37,7 +34,7 @@ docker buildx build -t sunken-dev/mdbook-extended .
 ```Dockerfile
 FROM ghcr.io/sunken-dev/mdbook-extended AS builder
 COPY . .
-RUN sh mdbook_build_wrapper.sh
+RUN ["mdbook", "build"]
 
 FROM nginx:alpine-slim AS webserver
 COPY --from=builder /app/book/html /usr/share/nginx/html

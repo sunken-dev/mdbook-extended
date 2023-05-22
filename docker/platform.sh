@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 case $TARGETARCH in
   "amd64")
     echo "x86_64-unknown-linux-gnu" > .platform
