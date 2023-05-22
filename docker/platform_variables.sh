@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euxo pipefail
 case $TARGETARCH in
   "amd64")
     echo "x86_64-unknown-linux-gnu" > .platform
