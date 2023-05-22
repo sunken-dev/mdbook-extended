@@ -25,10 +25,10 @@ RUN ./cargo_install.sh mdbook@0.4.25
 
 FROM debian:stable-slim
 WORKDIR /app
-COPY --from=mdbook-toc       --link /usr/local/cargo/bin/* /usr/bin/
-COPY --from=mdbook-mermaid   --link /usr/local/cargo/bin/* /usr/bin/
-COPY --from=mdbook-admonish  --link /usr/local/cargo/bin/* /usr/bin/
-COPY --from=mdbook-linkcheck --link /usr/local/cargo/bin/* /usr/bin/
-COPY --from=mdbook           --link /usr/local/cargo/bin/* /usr/bin/
+COPY --from=mdbook-toc       --link /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook-mermaid   --link /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook-admonish  --link /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook-linkcheck --link /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook           --link /usr/local/cargo/bin/mdbook* /usr/bin/
 ENTRYPOINT ["mdbook"]
 CMD ["--help"]
