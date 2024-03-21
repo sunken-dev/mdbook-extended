@@ -1,5 +1,5 @@
-# syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM rust:1.69-slim AS builder
+# syntax=docker/dockerfile:1.7
+FROM --platform=$BUILDPLATFORM rust:1.77-slim AS builder
 # Bash is needed for the substitution of TARGETARCH
 SHELL ["/bin/bash", "-c"]
 WORKDIR /app
@@ -13,10 +13,10 @@ ARG arm64=aarch64-unknown-linux-gnu
 ENV CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
 
 FROM builder AS mdbook-toc
-RUN cargo install --target ${!TARGETARCH} --locked mdbook-toc@0.11.0
+RUN cargo install --target ${!TARGETARCH} --locked mdbook-toc@0.14.0
 
 FROM builder AS mdbook-mermaid
-RUN cargo install --target ${!TARGETARCH} --locked mdbook-mermaid@0.12.6
+RUN cargo install --target ${!TARGETARCH} --locked mdbook-mermaid@0.13.0
 
 FROM builder AS mdbook-admonish
 RUN cargo install --target ${!TARGETARCH} --locked mdbook-admonish@1.8.0
